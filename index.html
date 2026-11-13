@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AppSalon 2.0</title>
+
+    <!-- Tailwind CSS CDN con darkMode 'class' -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: '#ec4899',
+            }
+          }
+        }
+      }
+    </script>
+
+    <!-- Google Fonts: Outfit, Plus Jakarta Sans & Cantarell -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Cantarell:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+    <style>
+      *, *::before, *::after {
+        box-sizing: border-box;
+      }
+      .cantarell-regular {
+        font-family: "Cantarell", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+      }
+      .cantarell-bold {
+        font-family: "Cantarell", sans-serif;
+        font-weight: 700;
+        font-style: normal;
+      }
+      .cantarell-regular-italic {
+        font-family: "Cantarell", sans-serif;
+        font-weight: 400;
+        font-style: italic;
+      }
+      .cantarell-bold-italic {
+        font-family: "Cantarell", sans-serif;
+        font-weight: 700;
+        font-style: italic;
+      }
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        min-height: 100% !important;
+        overflow-x: hidden !important;
+        overflow-y: auto !important;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+      #app {
+        width: 100%;
+        min-height: 100%;
+      }
+      :root {
+        font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      }
+      body, button, input, select, textarea, table, th, td {
+        font-family: 'Outfit', 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+      }
+
+      /* ========================================== */
+      /* MODO OSCURO GLOBAL (.dark) - OVERRIDES     */
+      /* ========================================== */
+      html.dark {
+        color-scheme: dark;
+        background-color: #0f172a !important;
+        color: #f8fafc !important;
+      }
+      html.dark body {
+        background-color: #0f172a !important;
+        color: #f8fafc !important;
+      }
+      html.dark header:not(.bg-transparent) {
+        background-color: #1e293b;
+        border-color: #334155;
+      }
+      html.dark header button, html.dark header div, html.dark header span {
+        color: #f8fafc;
+      }
+
+      /* Contenedores, Tarjetas y Paneles */
+      html.dark [style*="background: white"],
+      html.dark [style*="background: #ffffff"],
+      html.dark [style*="background-color: white"],
+      html.dark [style*="background:white"],
+      html.dark [style*="background-color:white"] {
+        background-color: #1e293b !important;
+        border-color: #334155 !important;
+        color: #f8fafc !important;
+      }
+      html.dark [style*="background: #f8fafc"],
+      html.dark [style*="background-color: #f8fafc"],
+      html.dark [style*="background: #f1f5f9"],
+      html.dark [style*="background-color: #f1f5f9"] {
+        background-color: #0f172a !important;
+        border-color: #334155 !important;
+        color: #f8fafc !important;
+      }
+
+      /* Títulos, Números de Métricas y Tipografía */
+      html.dark h1, html.dark h2, html.dark h3, html.dark h4, html.dark h5, html.dark h6 {
+        color: #ffffff !important;
+      }
+      html.dark label {
+        color: #cbd5e1 !important;
+      }
+      html.dark [style*="color: #0f172a"],
+      html.dark [style*="color: #1e293b"],
+      html.dark [style*="color:#0f172a"],
+      html.dark [style*="color:#1e293b"] {
+        color: #ffffff !important;
+      }
+      html.dark [style*="color: #64748b"],
+      html.dark [style*="color: #475569"],
+      html.dark [style*="color: #334155"],
+      html.dark [style*="color:#64748b"],
+      html.dark [style*="color:#475569"],
+      html.dark [style*="color:#334155"] {
+        color: #94a3b8 !important;
+      }
+      html.dark .text-slate-500, html.dark .text-slate-600, html.dark .text-slate-700 {
+        color: #cbd5e1 !important;
+      }
+      html.dark .text-slate-900, html.dark .text-slate-800 {
+        color: #ffffff !important;
+      }
+
+      /* Entradas de Texto, Selects y Checkboxes */
+      html.dark input[type="text"],
+      html.dark input[type="password"],
+      html.dark input[type="email"],
+      html.dark input[type="search"],
+      html.dark select,
+      html.dark textarea {
+        background-color: #0f172a !important;
+        color: #ffffff !important;
+        border-color: #475569 !important;
+      }
+      html.dark input:disabled {
+        background-color: #1e293b !important;
+        color: #94a3b8 !important;
+        opacity: 0.7;
+      }
+
+      /* Botones Secundarios, Download, Previous, Next */
+      html.dark button[style*="f1f5f9"],
+      html.dark button[style*="white"],
+      html.dark button[style*="ffffff"],
+      html.dark button.bg-slate-100,
+      html.dark button.bg-slate-200 {
+        background-color: #334155 !important;
+        border-color: #475569 !important;
+        color: #ffffff !important;
+      }
+      html.dark button:disabled,
+      html.dark button[disabled] {
+        background-color: #1e293b !important;
+        color: #64748b !important;
+        border-color: #334155 !important;
+        opacity: 0.4 !important;
+        cursor: not-allowed !important;
+      }
+
+      /* Tablas Datatable 3 */
+      html.dark table {
+        background-color: #1e293b !important;
+        color: #f8fafc !important;
+      }
+      html.dark tr {
+        border-color: #334155 !important;
+      }
+      html.dark th {
+        background-color: #0f172a !important;
+        color: #cbd5e1 !important;
+        border-color: #334155 !important;
+      }
+      html.dark td {
+        border-color: #334155 !important;
+        color: #e2e8f0 !important;
+      }
+
+      /* ========================================== */
+      /* SWEETALERT2 MODO OSCURO (POPUP & SPINNER)  */
+      /* ========================================== */
+      html.dark .swal2-container {
+        background-color: rgba(0, 0, 0, 0.75) !important;
+      }
+      html.dark .swal2-popup {
+        background-color: #1e293b !important;
+        color: #f8fafc !important;
+        border: 1px solid #334155 !important;
+        border-radius: 16px !important;
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7) !important;
+      }
+      html.dark .swal2-title,
+      html.dark .swal2-html-container,
+      html.dark .swal2-content {
+        color: #ffffff !important;
+      }
+      html.dark .swal2-input,
+      html.dark .swal2-textarea,
+      html.dark .swal2-select {
+        background-color: #0f172a !important;
+        color: #ffffff !important;
+        border: 1px solid #475569 !important;
+        box-shadow: none !important;
+      }
+      html.dark .swal2-input:focus,
+      html.dark .swal2-textarea:focus {
+        border-color: #ec4899 !important;
+        box-shadow: 0 0 0 2px rgba(236, 72, 153, 0.3) !important;
+      }
+      html.dark .swal2-validation-message {
+        background-color: #0f172a !important;
+        color: #f87171 !important;
+        border-color: #ef4444 !important;
+      }
+      html.dark .swal2-confirm {
+        background-color: #ec4899 !important;
+        color: #ffffff !important;
+      }
+      html.dark .swal2-deny, html.dark .swal2-cancel {
+        background-color: #475569 !important;
+        color: #ffffff !important;
+      }
+      html.dark .swal2-timer-progress-bar {
+        background-color: #ec4899 !important;
+      }
+
+      /* FullCalendar Modo Oscuro */
+      html.dark .fc {
+        color: #f8fafc !important;
+      }
+      html.dark .fc-theme-standard td,
+      html.dark .fc-theme-standard th,
+      html.dark .fc-theme-standard .fc-scrollgrid {
+        border-color: #334155 !important;
+      }
+      html.dark .fc .fc-toolbar-title {
+        color: #ffffff !important;
+      }
+      html.dark .fc .fc-button-primary {
+        background-color: #334155 !important;
+        border-color: #475569 !important;
+        color: #ffffff !important;
+      }
+      html.dark .fc .fc-button-primary:hover {
+        background-color: #475569 !important;
+      }
+      html.dark .fc .fc-daygrid-day.fc-day-today {
+        background-color: rgba(236, 72, 153, 0.15) !important;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
