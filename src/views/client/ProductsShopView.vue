@@ -1,40 +1,76 @@
 <template>
-  <div class="shop-page-wrapper" style="font-family: 'Outfit', sans-serif;">
-    <!-- 1. HERO BANNER DE LA TIENDA -->
-    <section class="relative overflow-hidden rounded-2xl mb-8 bg-gradient-to-r from-slate-900 via-[#270e29] to-slate-900 text-white p-6 sm:p-10 border border-purple-900/30 shadow-xl">
-      <div class="relative z-10 max-w-3xl">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/10 border border-pink-500/30 text-pink-300 text-xs font-bold uppercase tracking-widest mb-3">
-          <Sparkles class="w-3.5 h-3.5" /> Boutique & E-Commerce Oficial
-        </div>
-        <h1 class="text-3xl sm:text-5xl font-bold tracking-tight mb-3" style="font-family: 'Cormorant Garamond', Georgia, serif;">
-          Productos Profesionales de Belleza
-        </h1>
-        <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
-          Adquiere los mismos tratamientos, esmaltes y cuidados capilares de alta gama que utilizamos en el salón.
-          <strong>Compra de inmediato sin necesidad de registro ni inicio de sesión.</strong>
-        </p>
+  <div class="shop-page-wrapper w-full" style="font-family: 'Outfit', sans-serif;">
+    <!-- 1. HERO BANNER EXPANSIVO DE LA BOUTIQUE -->
+    <section class="relative overflow-hidden rounded-3xl mb-8 bg-gradient-to-r from-slate-950 via-[#270e2a] to-slate-950 text-white p-6 sm:p-10 lg:p-12 border border-purple-900/40 shadow-2xl">
+      <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Columna Principal de Texto (7 cols) -->
+        <div class="lg:col-span-7">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-pink-500/15 border border-pink-500/30 text-pink-300 text-xs font-bold uppercase tracking-widest mb-3">
+            <Sparkles class="w-3.5 h-3.5" /> Boutique & E-Commerce Oficial Leslie
+          </div>
+          <h1 class="text-3xl sm:text-5xl lg:text-6xl font-bold tracking-tight mb-3 leading-tight" style="font-family: 'Cormorant Garamond', Georgia, serif;">
+            Productos Profesionales de Belleza
+          </h1>
+          <p class="text-slate-300 text-sm sm:text-base leading-relaxed mb-6 max-w-2xl">
+            Adquiere los mismos tratamientos, esmaltes y cuidados capilares de alta gama que utilizamos en el salón.
+            <strong>Compra de inmediato como invitado sin necesidad de registrarte ni iniciar sesión.</strong>
+          </p>
 
-        <!-- Píldoras de beneficios -->
-        <div class="flex flex-wrap gap-3 text-xs font-semibold text-slate-200">
-          <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
-            <CheckCircle class="w-3.5 h-3.5 text-emerald-400" /> Compra Exprés como Invitado
-          </span>
-          <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
-            <CheckCircle class="w-3.5 h-3.5 text-emerald-400" /> Reserva Exclusiva de Stock
-          </span>
-          <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-sm border border-white/10">
-            <CheckCircle class="w-3.5 h-3.5 text-emerald-400" /> Retiro en Salón o Pago en Línea
-          </span>
+          <!-- Píldoras de beneficios -->
+          <div class="flex flex-wrap gap-2.5 text-xs font-semibold text-slate-200">
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/10 shadow-sm">
+              <CheckCircle class="w-3.5 h-3.5 text-emerald-400" /> Compra Exprés Sin Registro
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/10 shadow-sm">
+              <CheckCircle class="w-3.5 h-3.5 text-emerald-400" /> Reserva Exclusiva de Stock 48h
+            </span>
+            <span class="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/10 backdrop-blur-md border border-white/10 shadow-sm">
+              <CheckCircle class="w-3.5 h-3.5 text-emerald-400" /> Pago en Línea o al Recoger
+            </span>
+          </div>
+        </div>
+
+        <!-- Columna de Garantías y Valor (5 cols) - Ocupa todo el ancho en pantallas grandes -->
+        <div class="lg:col-span-5 grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-1 gap-3.5">
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-3.5 shadow-sm hover:bg-white/10 transition-colors">
+            <div class="w-11 h-11 rounded-xl bg-pink-500/20 text-pink-300 flex items-center justify-center flex-shrink-0 shadow-inner">
+              <ShieldCheck class="w-6 h-6" />
+            </div>
+            <div>
+              <h4 class="font-bold text-xs uppercase tracking-wider text-pink-200">Garantía de Calidad</h4>
+              <p class="text-[11px] text-slate-300 leading-snug">Insumos 100% profesionales y probados en cabina.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-3.5 shadow-sm hover:bg-white/10 transition-colors">
+            <div class="w-11 h-11 rounded-xl bg-purple-500/20 text-purple-300 flex items-center justify-center flex-shrink-0 shadow-inner">
+              <Clock class="w-6 h-6" />
+            </div>
+            <div>
+              <h4 class="font-bold text-xs uppercase tracking-wider text-purple-200">Reserva Inmediata 48 Horas</h4>
+              <p class="text-[11px] text-slate-300 leading-snug">Genera tu ticket y asegura tus unidades en mostrador.</p>
+            </div>
+          </div>
+
+          <div class="p-4 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-md flex items-center gap-3.5 shadow-sm hover:bg-white/10 transition-colors">
+            <div class="w-11 h-11 rounded-xl bg-emerald-500/20 text-emerald-300 flex items-center justify-center flex-shrink-0 shadow-inner">
+              <Truck class="w-6 h-6" />
+            </div>
+            <div>
+              <h4 class="font-bold text-xs uppercase tracking-wider text-emerald-200">Retiro Exprés o Pago en Salón</h4>
+              <p class="text-[11px] text-slate-300 leading-snug">Paga con tarjeta, efectivo en recepción o PayPal.</p>
+            </div>
+          </div>
         </div>
       </div>
 
-      <!-- Decorativo de Fondo -->
-      <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-pink-600/15 rounded-full blur-3xl pointer-events-none"></div>
-      <div class="absolute right-1/3 -top-12 w-60 h-60 bg-purple-700/15 rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Decorativos de Fondo -->
+      <div class="absolute -right-10 -bottom-10 w-96 h-96 bg-pink-600/15 rounded-full blur-3xl pointer-events-none"></div>
+      <div class="absolute right-1/3 -top-12 w-80 h-80 bg-purple-700/15 rounded-full blur-3xl pointer-events-none"></div>
     </section>
 
     <!-- 2. BARRA DE CONTROLES: BÚSQUEDA, FILTROS Y CARRITO FLOTANTE -->
-    <div class="sticky top-20 z-30 mb-8 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md p-4 rounded-xl border border-slate-200/80 dark:border-slate-800/80 shadow-sm transition-all">
+    <div class="sticky top-20 z-30 mb-8 bg-white/85 dark:bg-slate-900/85 backdrop-blur-md p-4 sm:p-5 rounded-2xl border border-slate-200/90 dark:border-slate-800 shadow-md transition-all">
       <div class="flex flex-col md:flex-row gap-4 items-stretch md:items-center justify-between">
         <!-- Buscador con icono -->
         <div class="relative flex-1">
@@ -43,7 +79,7 @@
             v-model="searchQuery"
             type="text"
             placeholder="Buscar productos por nombre, marca o descripción..."
-            class="w-full pl-10 pr-10 py-2.5 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-[#c43ec7] text-sm"
+            class="w-full pl-10 pr-10 py-2.5 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-[#c43ec7] text-sm"
           />
           <button
             v-if="searchQuery"
@@ -55,24 +91,26 @@
           </button>
         </div>
 
-        <!-- Selector de Ordenamiento -->
-        <div class="flex items-center gap-2">
-          <label class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 whitespace-nowrap">Ordenar por:</label>
-          <select
-            v-model="sortBy"
-            class="py-2.5 px-3 rounded-lg bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#c43ec7]"
-          >
-            <option value="featured">Destacados</option>
-            <option value="price_asc">Precio: Menor a Mayor</option>
-            <option value="price_desc">Precio: Mayor a Menor</option>
-            <option value="name_asc">Nombre: A - Z</option>
-            <option value="sales">Solo Ofertas</option>
-          </select>
+        <!-- Selector de Ordenamiento y Botón de Carrito -->
+        <div class="flex items-center gap-3">
+          <div class="flex items-center gap-2">
+            <label class="text-xs font-bold uppercase tracking-wider text-slate-500 dark:text-slate-400 whitespace-nowrap">Ordenar por:</label>
+            <select
+              v-model="sortBy"
+              class="py-2.5 px-3 rounded-xl bg-slate-50 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-200 dark:border-slate-700 text-sm focus:outline-none focus:ring-2 focus:ring-[#c43ec7]"
+            >
+              <option value="featured">Destacados</option>
+              <option value="price_asc">Precio: Menor a Mayor</option>
+              <option value="price_desc">Precio: Mayor a Menor</option>
+              <option value="name_asc">Nombre: A - Z</option>
+              <option value="sales">Solo Ofertas</option>
+            </select>
+          </div>
 
           <!-- Botón de Abrir Carrito Drawer -->
           <button
             @click="cartStore.toggleDrawer()"
-            class="relative flex items-center gap-2 py-2.5 px-4 rounded-lg bg-[#3A113D] dark:bg-[#c43ec7] text-white font-bold text-sm shadow-md hover:bg-[#2c0c2e] dark:hover:bg-[#a62ba9] transition-transform active:scale-95"
+            class="relative flex items-center gap-2 py-2.5 px-4 rounded-xl bg-[#3A113D] dark:bg-[#c43ec7] text-white font-bold text-sm shadow-md hover:bg-[#2c0c2e] dark:hover:bg-[#a62ba9] transition-transform active:scale-95"
             title="Abrir Carrito"
           >
             <ShoppingCart class="w-4 h-4" />
@@ -94,7 +132,7 @@
               ? 'bg-[#3A113D] text-white dark:bg-[#c43ec7]'
               : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
           ]"
-          class="px-3 py-1.5 rounded-full text-xs font-bold transition-colors"
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-colors"
         >
           Todos ({{ products.length }})
         </button>
@@ -106,7 +144,7 @@
               ? 'bg-pink-600 text-white'
               : 'bg-pink-50 dark:bg-pink-950/40 text-pink-700 dark:text-pink-300 hover:bg-pink-100'
           ]"
-          class="px-3 py-1.5 rounded-full text-xs font-bold transition-colors flex items-center gap-1"
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-colors flex items-center gap-1"
         >
           ⚡ En Oferta
         </button>
@@ -118,7 +156,7 @@
               ? 'bg-blue-600 text-white'
               : 'bg-blue-50 dark:bg-blue-950/40 text-blue-700 dark:text-blue-300 hover:bg-blue-100'
           ]"
-          class="px-3 py-1.5 rounded-full text-xs font-bold transition-colors flex items-center gap-1"
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-colors flex items-center gap-1"
         >
           ✨ Nuevos
         </button>
@@ -130,7 +168,7 @@
               ? 'bg-emerald-600 text-white'
               : 'bg-emerald-50 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-100'
           ]"
-          class="px-3 py-1.5 rounded-full text-xs font-bold transition-colors flex items-center gap-1"
+          class="px-3.5 py-1.5 rounded-full text-xs font-bold transition-colors flex items-center gap-1"
         >
           ✓ En Stock
         </button>
@@ -147,7 +185,7 @@
               ? 'bg-purple-700 text-white'
               : 'bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700'
           ]"
-          class="px-3 py-1.5 rounded-full text-xs font-semibold transition-colors"
+          class="px-3.5 py-1.5 rounded-full text-xs font-semibold transition-colors"
         >
           {{ cat }}
         </button>
@@ -165,22 +203,22 @@
 
     <!-- 3. ESTADOS DE CARGA / VACÍO -->
     <!-- Loading Skeleton -->
-    <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-      <div v-for="n in 8" :key="n" class="bg-white dark:bg-slate-800 rounded-2xl p-4 border border-slate-200 dark:border-slate-700 animate-pulse">
-        <div class="w-full h-48 bg-slate-200 dark:bg-slate-700 rounded-xl mb-4"></div>
+    <div v-if="loading" class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-6 xl:gap-8 mb-12">
+      <div v-for="n in 8" :key="n" class="bg-white dark:bg-slate-800 rounded-3xl p-5 border border-slate-200 dark:border-slate-700 animate-pulse">
+        <div class="w-full h-64 bg-slate-200 dark:bg-slate-700 rounded-2xl mb-4"></div>
         <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-1/3 mb-2"></div>
         <div class="h-6 bg-slate-200 dark:bg-slate-700 rounded w-3/4 mb-3"></div>
         <div class="h-4 bg-slate-200 dark:bg-slate-700 rounded w-full mb-4"></div>
-        <div class="h-10 bg-slate-200 dark:bg-slate-700 rounded-lg"></div>
+        <div class="h-10 bg-slate-200 dark:bg-slate-700 rounded-xl"></div>
       </div>
     </div>
 
     <!-- No results -->
-    <div v-else-if="filteredProducts.length === 0" class="text-center py-16 px-4 bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm my-6">
+    <div v-else-if="filteredProducts.length === 0" class="text-center py-20 px-4 bg-white dark:bg-slate-800 rounded-3xl border border-slate-200 dark:border-slate-700 shadow-sm my-8">
       <div class="w-16 h-16 mx-auto mb-4 rounded-full bg-pink-100 dark:bg-pink-950/50 flex items-center justify-center text-pink-600 dark:text-pink-400">
         <ShoppingBag class="w-8 h-8" />
       </div>
-      <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2" style="font-family: 'Cormorant Garamond', Georgia, serif;">
+      <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-2" style="font-family: 'Cormorant Garamond', Georgia, serif;">
         No encontramos productos con estos criterios
       </h3>
       <p class="text-slate-500 dark:text-slate-400 text-sm max-w-md mx-auto mb-6">
@@ -188,66 +226,76 @@
       </p>
       <button
         @click="resetFilters"
-        class="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg bg-[#3A113D] text-white text-sm font-bold shadow hover:bg-[#2b0c2d]"
+        class="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#3A113D] text-white text-sm font-bold shadow hover:bg-[#2b0c2d]"
       >
         Ver Todos los Productos
       </button>
     </div>
 
-    <!-- 4. GRID PRINCIPAL DE PRODUCTOS -->
-    <div v-else class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+    <!-- 4. GRID PRINCIPAL DE PRODUCTOS (EXPANSIVO A TODO EL ANCHO) -->
+    <div v-else class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-4 gap-6 xl:gap-8 mb-16">
       <div
         v-for="prod in filteredProducts"
         :key="prod._id"
-        class="group bg-white dark:bg-slate-800 rounded-2xl border border-slate-200 dark:border-slate-700 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1"
+        class="group bg-white dark:bg-slate-800 rounded-3xl border border-slate-200/90 dark:border-slate-700 shadow-sm hover:shadow-2xl transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-1.5"
       >
-        <!-- Imagen / Header de Tarjeta -->
-        <div class="relative w-full h-52 bg-slate-100 dark:bg-slate-900 overflow-hidden flex items-center justify-center">
+        <!-- Imagen / Header de Tarjeta Generosa -->
+        <div class="relative w-full h-64 sm:h-72 bg-slate-100 dark:bg-slate-900 overflow-hidden flex items-center justify-center">
           <img
-            v-if="prod.imageUrl"
+            v-if="prod.imageUrl && !failedImages[prod._id]"
             :src="prod.imageUrl"
             :alt="prod.name"
+            @error="failedImages[prod._id] = true"
             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             loading="lazy"
           />
-          <div v-else class="flex flex-col items-center justify-center text-slate-400 p-4 text-center">
-            <ShoppingBag class="w-12 h-12 mb-2 text-[#c43ec7]/40" />
-            <span class="text-xs uppercase font-bold tracking-wider text-slate-400">Leslie Care</span>
+          <!-- Luxury Branded Placeholder cuando no hay imagen o falla -->
+          <div
+            v-else
+            class="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-br from-slate-900 via-purple-950/40 to-slate-900 border-b border-purple-900/20"
+          >
+            <div class="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-[#c43ec7] mb-2 shadow-inner group-hover:scale-110 transition-transform">
+              <Sparkles class="w-8 h-8 opacity-80" />
+            </div>
+            <span class="text-[11px] uppercase tracking-widest font-extrabold text-purple-300/80">
+              {{ getCategoryName(prod) }}
+            </span>
+            <span class="text-xs font-semibold text-slate-400 mt-0.5">Leslie Professional</span>
           </div>
 
           <!-- Badges Superpuestos -->
-          <div class="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+          <div class="absolute top-3.5 left-3.5 flex flex-col gap-1.5 z-10">
             <span
               v-if="prod.isOnSale"
-              class="px-2.5 py-1 rounded-md bg-rose-600 text-white text-xs font-black uppercase tracking-wider shadow-md flex items-center gap-1"
+              class="px-3 py-1 rounded-lg bg-rose-600 text-white text-xs font-black uppercase tracking-wider shadow-md flex items-center gap-1"
             >
               ⚡ {{ calculateDiscountPercent(prod) }}% OFF
             </span>
             <span
               v-else-if="prod.isNew"
-              class="px-2.5 py-1 rounded-md bg-blue-600 text-white text-xs font-black uppercase tracking-wider shadow-md"
+              class="px-3 py-1 rounded-lg bg-blue-600 text-white text-xs font-black uppercase tracking-wider shadow-md"
             >
               ✨ Nuevo
             </span>
           </div>
 
           <!-- Stock Pill Top-Right -->
-          <div class="absolute top-3 right-3 z-10">
+          <div class="absolute top-3.5 right-3.5 z-10">
             <span
               v-if="prod.availableStock > 5"
-              class="px-2.5 py-1 rounded-md bg-emerald-600/90 backdrop-blur-sm text-white text-[11px] font-bold shadow-sm"
+              class="px-3 py-1 rounded-lg bg-emerald-600/90 backdrop-blur-sm text-white text-xs font-bold shadow-sm"
             >
               ✓ {{ prod.availableStock }} en stock
             </span>
             <span
               v-else-if="prod.availableStock > 0"
-              class="px-2.5 py-1 rounded-md bg-amber-500/95 backdrop-blur-sm text-slate-900 text-[11px] font-extrabold shadow-sm"
+              class="px-3 py-1 rounded-lg bg-amber-500/95 backdrop-blur-sm text-slate-900 text-xs font-extrabold shadow-sm"
             >
               ⚠️ ¡Solo {{ prod.availableStock }} disp.!
             </span>
             <span
               v-else
-              class="px-2.5 py-1 rounded-md bg-red-600/90 backdrop-blur-sm text-white text-[11px] font-bold shadow-sm"
+              class="px-3 py-1 rounded-lg bg-red-600/90 backdrop-blur-sm text-white text-xs font-bold shadow-sm"
             >
               Agotado
             </span>
@@ -255,20 +303,20 @@
         </div>
 
         <!-- Cuerpo de Tarjeta -->
-        <div class="p-5 flex-1 flex flex-col justify-between">
+        <div class="p-6 flex-1 flex flex-col justify-between">
           <div>
             <!-- Categoría -->
-            <div class="flex items-center justify-between text-xs mb-2">
-              <span class="px-2 py-0.5 rounded bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 font-bold uppercase tracking-wider text-[10px]">
+            <div class="flex items-center justify-between text-xs mb-2.5">
+              <span class="px-2.5 py-1 rounded-lg bg-purple-100 dark:bg-purple-950/60 text-purple-700 dark:text-purple-300 font-bold uppercase tracking-wider text-[11px]">
                 {{ getCategoryName(prod) }}
               </span>
-              <span v-if="prod.reservedStock > 0" class="text-amber-600 dark:text-amber-400 text-[11px] font-semibold">
+              <span v-if="prod.reservedStock > 0" class="text-amber-600 dark:text-amber-400 text-xs font-semibold">
                 ⏳ {{ prod.reservedStock }} en proceso
               </span>
             </div>
 
             <!-- Nombre -->
-            <h3 class="font-bold text-slate-900 dark:text-white text-lg mb-1 leading-snug line-clamp-1" style="font-family: 'Cormorant Garamond', Georgia, serif;">
+            <h3 class="font-bold text-slate-900 dark:text-white text-xl mb-1.5 leading-snug line-clamp-1" style="font-family: 'Cormorant Garamond', Georgia, serif;">
               {{ prod.name }}
             </h3>
 
@@ -279,36 +327,36 @@
           </div>
 
           <!-- Precios y Acciones -->
-          <div class="pt-3 border-t border-slate-100 dark:border-slate-700/80">
+          <div class="pt-4 border-t border-slate-100 dark:border-slate-700/80">
             <!-- Bloque de Precio -->
             <div class="flex items-baseline justify-between mb-4">
               <div v-if="prod.isOnSale" class="flex flex-col">
                 <span class="text-xs text-slate-400 line-through font-medium">${{ prod.price }} MXN</span>
-                <span class="text-2xl font-black text-emerald-600 dark:text-emerald-400">
+                <span class="text-2xl sm:text-3xl font-black text-emerald-600 dark:text-emerald-400">
                   ${{ prod.salePrice }} <span class="text-xs font-semibold text-slate-500">MXN</span>
                 </span>
               </div>
               <div v-else>
-                <span class="text-2xl font-black text-slate-900 dark:text-white">
+                <span class="text-2xl sm:text-3xl font-black text-slate-900 dark:text-white">
                   ${{ prod.price }} <span class="text-xs font-semibold text-slate-500">MXN</span>
                 </span>
               </div>
 
               <!-- Selector de Cantidad -->
-              <div v-if="prod.availableStock > 0" class="flex items-center border border-slate-200 dark:border-slate-700 rounded-lg overflow-hidden bg-slate-50 dark:bg-slate-900">
+              <div v-if="prod.availableStock > 0" class="flex items-center border border-slate-200 dark:border-slate-700 rounded-xl overflow-hidden bg-slate-50 dark:bg-slate-900">
                 <button
                   @click="decreaseQty(prod._id)"
-                  class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-bold transition-colors"
+                  class="px-2.5 py-1 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-bold transition-colors"
                   title="Menos"
                 >
                   -
                 </button>
-                <span class="px-2.5 py-1 text-xs font-extrabold text-slate-800 dark:text-slate-200 min-w-[24px] text-center">
+                <span class="px-3 py-1 text-xs font-extrabold text-slate-800 dark:text-slate-200 min-w-[28px] text-center">
                   {{ productQuantities[prod._id] || 1 }}
                 </span>
                 <button
                   @click="increaseQty(prod._id, prod.availableStock)"
-                  class="px-2 py-1 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-bold transition-colors"
+                  class="px-2.5 py-1 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 text-sm font-bold transition-colors"
                   title="Más"
                 >
                   +
@@ -317,11 +365,11 @@
             </div>
 
             <!-- Botones de Acción (Agregar / Comprar Ahora) -->
-            <div class="flex flex-col gap-2">
+            <div class="flex flex-col gap-2.5">
               <button
                 @click="handleAddToCart(prod)"
                 :disabled="prod.availableStock <= 0"
-                class="w-full flex items-center justify-center gap-2 py-2.5 px-3 rounded-xl font-bold text-xs uppercase tracking-wider bg-[#3A113D] dark:bg-[#c43ec7] text-white hover:bg-[#2b0c2d] dark:hover:bg-[#a62ba9] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-sm active:scale-98"
+                class="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-bold text-xs uppercase tracking-wider bg-[#3A113D] dark:bg-[#c43ec7] text-white hover:bg-[#2b0c2d] dark:hover:bg-[#a62ba9] transition-all disabled:opacity-50 disabled:cursor-not-allowed shadow-md active:scale-98"
               >
                 <ShoppingBag class="w-4 h-4" />
                 {{ prod.availableStock > 0 ? 'Agregar al Carrito' : 'Sin Stock Disponible' }}
@@ -330,7 +378,7 @@
               <button
                 v-if="prod.availableStock > 0"
                 @click="handleBuyNow(prod)"
-                class="w-full flex items-center justify-center gap-1.5 py-2 px-3 rounded-xl font-bold text-xs uppercase tracking-wider border border-[#3A113D] dark:border-[#c43ec7] text-[#3A113D] dark:text-[#f472b6] hover:bg-pink-50 dark:hover:bg-purple-950/30 transition-all active:scale-98"
+                class="w-full flex items-center justify-center gap-1.5 py-2.5 px-4 rounded-xl font-bold text-xs uppercase tracking-wider border border-[#3A113D] dark:border-[#c43ec7] text-[#3A113D] dark:text-[#f472b6] hover:bg-pink-50 dark:hover:bg-purple-950/30 transition-all active:scale-98"
               >
                 Comprar Ahora <ArrowRight class="w-3.5 h-3.5" />
               </button>
@@ -340,7 +388,58 @@
       </div>
     </div>
 
-    <!-- 5. SLIDE-OVER CART DRAWER INTERACTIVO -->
+    <!-- 5. SECCIÓN COMPLEMENTARIA DE VALOR: LLENA EL ESPACIO DE FORMA ELEGANTE -->
+    <section class="rounded-3xl p-8 sm:p-12 bg-slate-100 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800 mb-12 shadow-sm">
+      <div class="text-center max-w-2xl mx-auto mb-10">
+        <span class="text-xs font-bold uppercase tracking-widest text-[#c43ec7] block mb-2">Compromiso Leslie</span>
+        <h2 class="text-2xl sm:text-4xl font-bold text-slate-900 dark:text-white" style="font-family: 'Cormorant Garamond', Georgia, serif;">
+          La Experiencia de Salón en la Comodidad de tu Hogar
+        </h2>
+        <p class="text-slate-500 dark:text-slate-400 text-sm mt-2">
+          Seleccionamos fórmulas certificadas para garantizar resultados duraderos sin maltratar tus uñas ni tu cabello.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-purple-100 dark:bg-purple-950/60 text-[#c43ec7] flex items-center justify-center mb-4">
+            <Heart class="w-6 h-6" />
+          </div>
+          <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">Asesoría de Estilistas</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            ¿Dudas sobre cuál esmalte o tratamiento elegir? Escríbenos y nuestro equipo te asesorará paso a paso para cuidar tu imagen.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-pink-100 dark:bg-pink-950/60 text-pink-600 dark:text-pink-400 flex items-center justify-center mb-4">
+            <Award class="w-6 h-6" />
+          </div>
+          <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">Insumos de Cabina</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">
+            No vendemos marcas genéricas. Cada producto que ves en la tienda es el mismo que aplicamos en nuestros servicios de alta gama.
+          </p>
+        </div>
+
+        <div class="p-6 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200/80 dark:border-slate-700/80 shadow-sm">
+          <div class="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-950/60 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4">
+            <Calendar class="w-6 h-6" />
+          </div>
+          <h3 class="font-bold text-base text-slate-900 dark:text-white mb-2">¿Prefieres que te lo apliquemos?</h3>
+          <p class="text-xs text-slate-500 dark:text-slate-400 leading-relaxed mb-4">
+            Reserva una cita con nuestras artistas de uñas, pestañas o cabello y relájate con una experiencia VIP completa.
+          </p>
+          <router-link
+            to="/client/book"
+            class="inline-flex items-center gap-1.5 text-xs font-bold text-[#c43ec7] hover:underline"
+          >
+            Agendar Servicio en Salón <ArrowRight class="w-3.5 h-3.5" />
+          </router-link>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. SLIDE-OVER CART DRAWER INTERACTIVO -->
     <transition name="drawer-slide">
       <div v-if="cartStore.isDrawerOpen" class="fixed inset-0 z-50 overflow-hidden" aria-labelledby="slide-over-title" role="dialog" aria-modal="true">
         <!-- Backdrop -->
@@ -384,9 +483,10 @@
                 <!-- Thumbnail -->
                 <div class="w-16 h-16 rounded-lg bg-slate-200 dark:bg-slate-700 overflow-hidden flex-shrink-0 flex items-center justify-center">
                   <img
-                    v-if="item.product.imageUrl"
+                    v-if="item.product.imageUrl && !failedImages[item.product._id]"
                     :src="item.product.imageUrl"
                     :alt="item.product.name"
+                    @error="failedImages[item.product._id] = true"
                     class="w-full h-full object-cover"
                   />
                   <ShoppingBag v-else class="w-6 h-6 text-slate-400" />
@@ -490,6 +590,12 @@ import {
   CheckCircle,
   ArrowRight,
   Trash2,
+  ShieldCheck,
+  Clock,
+  Truck,
+  Heart,
+  Award,
+  Calendar,
 } from 'lucide-vue-next';
 import io, { Socket } from 'socket.io-client';
 
@@ -506,6 +612,8 @@ const sortBy = ref('featured');
 
 // Control de cantidad por producto en la tarjeta
 const productQuantities = ref<Record<string, number>>({});
+// Control de imágenes que no cargan para fallback elegante
+const failedImages = ref<Record<string, boolean>>({});
 
 const apiUrl = import.meta.env.VITE_API_URL || '/api';
 let socket: Socket | null = null;

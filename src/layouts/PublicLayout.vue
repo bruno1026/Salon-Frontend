@@ -21,7 +21,7 @@
           : 'bg-transparent border-none shadow-none text-white'
       ]"
     >
-      <div style="max-width: 1400px; margin: 0 auto; padding: 0.9rem 1.5rem; display: flex; align-items: center; justify-content: space-between;">
+      <div class="max-w-[1720px] w-full mx-auto px-4 sm:px-8 xl:px-12 py-3.5 flex items-center justify-between">
         <!-- Logo Editorial de Marca (Leslie Uñitas & Pestañas) -->
         <router-link to="/" style="text-decoration: none; display: flex; align-items: center; gap: 0.6rem;" :class="((isLanding || route.path === '/about') && !isScrolled) ? 'text-white' : 'text-slate-900 dark:text-white'">
           <Sparkles style="width: 22px; height: 22px; color: #c43ec7; flex-shrink: 0;" />
@@ -180,8 +180,15 @@
       </div>
     </transition>
 
-    <!-- Main Content (Full-width en Landing & About, Max-Width 1200px en Páginas Internas) -->
-    <main :style="(isLanding || route.path === '/about') ? { width: '100%', margin: 0, padding: 0 } : { maxWidth: '1200px', margin: '0 auto', padding: '6rem 1.5rem 2rem 1.5rem' }">
+    <!-- Main Content (Full-width en Landing & About, Max-Width 1720px en Páginas Internas) -->
+    <main
+      :style="(isLanding || route.path === '/about') ? { width: '100%', margin: 0, padding: 0 } : undefined"
+      :class="[
+        (isLanding || route.path === '/about')
+          ? ''
+          : 'w-full max-w-[1720px] mx-auto px-4 sm:px-8 xl:px-12 pt-24 pb-16 min-h-screen'
+      ]"
+    >
       <router-view />
     </main>
 
